@@ -4,7 +4,19 @@ import { BNodeNum } from "../common/bst";
  * Returns an array of visited nodes. */
 
 function inOrder(node: BNodeNum | null): number[] {
-  return [42];
+  if (!node) return [];
+
+  const values = [];
+
+  if (node.left) {
+    values.push(...inOrder(node.left));
+  }
+  values.push(node.val);
+  if (node.right) {
+    values.push(...inOrder(node.right));
+  }
+
+  return values;
 }
 
 
@@ -15,8 +27,8 @@ function inOrder(node: BNodeNum | null): number[] {
  */
 
 function inOrderAccum(
-    node: BNodeNum | null = null,
-    accum: number[] = []): number[] {
+  node: BNodeNum | null = null,
+  accum: number[] = []): number[] {
   return [42];
 }
 

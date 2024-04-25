@@ -42,3 +42,4 @@ class QueueNum extends Queue<number> {
 }
 
 export { Queue, QueueStr, QueueNum };
+ 
